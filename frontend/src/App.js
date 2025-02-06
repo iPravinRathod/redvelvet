@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Step1 from "./components/Step1";
@@ -6,19 +5,15 @@ import Step2 from "./components/Step2";
 import Review from "./components/Review";
 
 function App() {
-	const [data, setData] = useState({});
 
-	useEffect(() => {
-		// Fetch data from the backend
-		fetch("/api/data")
-			.then((response) => response.json())
-			.then((data) => setData(data));
-	}, []);
+
 
 	return (
 		<div className="App">
-			<h1>React Frontend</h1>
-			<p>Message from backend: {data.message}</p>
+			{/* <h1>React Frontend</h1> */}
+			<div style={{ textAlign: "center" }}>
+				<img src="/redvelvet-logo.jpeg" alt="logo" width="200" style={{ border: '1px solid green', align: 'center' }} />
+			</div>
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Step1 />} />
